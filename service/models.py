@@ -429,7 +429,6 @@ class ShopcartItem(db.Model):
 
     @classmethod
     def find_by_sku_and_sid(cls, sku, sid):
-        #TODO change documentation
         """ Finds a items in a shopcart based on the shopcart id and sku id provided """
-        #cls.logger.info("Processing lookup for shopcart item id %s ...", item_id)
+        cls.logger.info("Processing lookup for shopcart item with sku" +str(sku)+" and sid="+str(sid))
         return cls.query.filter_by(sid=sid).filter_by(sku=sku).all()
